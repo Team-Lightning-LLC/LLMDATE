@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<pre id="out"></pre>
+
+<script>
+  const now = new Date();
+  const out = {
+    utc_date: now.toISOString().split("T")[0],
+    utc_datetime: now.toISOString(),
+    local_date: now.toLocaleDateString("en-CA"),
+    local_datetime: now.toLocaleString(),
+    unix_epoch: Math.floor(now.getTime() / 1000),
+    readable: now.toString(),
+  };
+
+  document.getElementById("out").textContent = JSON.stringify(out, null, 2);
+</script>
+</body>
+</html>
